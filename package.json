@@ -1,5 +1,5 @@
 {
-	"name": "isubo-version",
+	"name": "@isubo-org/version",
 	"version": "0.0.2-alpha.4",
 	"type": "module",
 	"main": "main.js",

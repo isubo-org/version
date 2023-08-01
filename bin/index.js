@@ -2,6 +2,7 @@ import fs from 'fs';
 import yargs from 'yargs';
 import { selectCmd } from '../main.js';
 import standardVersion from 'standard-version';
+import standardVersionArgs from 'standard-version/command.js';
 
 const {
   version
@@ -20,7 +21,11 @@ yargs(process.argv.slice(2))
         return;
       }
       console.info(`✔ ${ret.cmd}`);
-      await standardVersion(ret.args)
+
+      await standardVersion({
+        ...standardVersionArgs.parse(),
+        ...ret.args
+      })
     }
   )
   .parse()

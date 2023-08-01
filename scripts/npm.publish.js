@@ -6,6 +6,7 @@ import { execSync } from 'child_process';
 
 const pkgJson= JSON.parse(fs.readFileSync('package.json', 'utf8'));
 const {
+  owner,
   version
 } = pkgJson;
 
@@ -85,10 +86,10 @@ function execPublishCmd(tag) {
 }
 
 function loginIf() {
-  const isLogin = !!execSync(`npm whoami`, {
+  const username = !!execSync(`npm whoami`, {
     encoding: 'utf8'
   });
-  if (!isLogin) {
+  if (!username || username !== owner) {
     execSync('npm login', { stdio: 'inherit' });
   }
 }

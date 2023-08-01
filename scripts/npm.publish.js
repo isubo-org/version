@@ -51,7 +51,7 @@ function deleteScripts() {
     throw new Error(`✖ ${chalk.redBright(`${distPkgPath} not exist!`)}`);
   }
 
-  if (pkgJson?.scripts?.prepare) {
+  if (pkgJson?.scripts) {
     distPkg = {
       ...pkgJson,
       scripts: excludepRrops(
@@ -59,7 +59,8 @@ function deleteScripts() {
         'build',
         'prepare',
         'publish',
-        'postversion'
+        'postversion',
+        'version'
       )
     };
 

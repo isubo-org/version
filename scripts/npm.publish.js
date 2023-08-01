@@ -73,7 +73,7 @@ function deleteScripts() {
 }
 
 function execPublishCmd(tag) {
-  const fullCmd = `npm publish --tag ${tag}`;
+  const fullCmd = `npm publish --tag ${tag} --access public`;
   console.info(`✔ ${chalk.greenBright(`${fullCmd}\n`)}`);
 
   deleteScripts();

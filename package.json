@@ -8,8 +8,8 @@
 	},
 	"scripts": {
 		"build": "node ./scripts/dist.build.js",
-		"publish": "npm run build && node ./scripts/npm.publish.js",
-		"version": "node ./bin/index.js"
+		"publish": "node ./scripts/npm.publish.js",
+		"version": "node ./bin/index.js && npm run build"
 	},
 	"dependencies": {
 		"chalk": "^5.3.0",
